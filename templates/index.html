@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load filtros %}
+
+<html lang="en">
+<head>
+    <title>Area de teste</title>
+</head>
+<body>
+{% block conteudo %}
+<div class="form-group">
+        <label>Nome:</label>
+        {{ formcliente.nome |addclass:'form-control'}}
+    </div>
+{% endblock conteudo %}
+</body>
+</html>
