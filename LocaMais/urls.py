@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from locadora.views import cadastrocliente
+from locadora.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', cadastrocliente, name='cadastrocliente')
+    path('', cadastrocliente, name='cadastrocliente'),
+    path('cadastroveiculo', cadastroveiculo, name='cadastroveiculo' )
 ]

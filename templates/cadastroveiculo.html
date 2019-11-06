@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load filtros %}
+
+
+{% block conteudo %}
+
+    <form class="card-header">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>Marca</label>
+                {{ formveiculo.marca | addclass:'form-control'  }}
+            </div>
+            <div class="form-group col-md-3">
+                <label>Modelo</label>
+                {{ formveiculo.modelo | addclass:'form-control'  }}
+            </div>
+            <div class="form-group col-md-1">
+                <label>Ano</label>
+                {{ formveiculo.ano | addclass:'form-control'  }}
+            </div>
+         <div class="form-row">
+            <div class="form-group col-md-5">
+                <label>Placa</label>
+                {{ formveiculo.placa | addclass:'form-control'  }}
+            </div>
+            <div class="form-group col-md-5">
+                <label>Chassi</label>
+                {{ formveiculo.chassi | addclass:'form-control'  }}
+            </div>
+            <div class="form-group col-md-2">
+                <label>cor</label>
+                {{ formveiculo.cor | addclass:'form-control'  }}
+            </div>
+
+
+
+        </div>
+
+
+
+    </form>
+
+
+{% endblock conteudo %}
