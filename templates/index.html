@@ -7,10 +7,63 @@
 </head>
 <body>
 {% block conteudo %}
-<div class="form-group">
-        <label>Nome:</label>
-        {{ formcliente.nome |addclass:'form-control'}}
+
+
+<form method="post" class="card-header">
+  {% csrf_token %}
+    <h4>Cadastro de cliente</h4>
+  <div class="form-row">
+    <div class="form-group col-md-6 ">
+      <label>Campo</label>
+      {{ formcliente.nome | addclass:'form-control' }}
     </div>
+    <div class="form-group col-md-2">
+      <label>Campo</label>
+      {{ formcliente.nome | addclass:'form-control' }}
+    </div>
+    <div class="form-group col-md-2">
+      <label>Campo</label>
+      {{ formcliente.nome | addclass:'form-control' }}
+    </div>
+
+
+  </div>
+  <div class="form-group">
+    <label>Campo</label>
+    {{ formcliente.nome | addclass:'form-control' }}
+  </div>
+  <div class="form-group">
+    <label>Campo</label>
+    {{ formcliente.nome | addclass:'form-control' }}
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Campo</label>
+      {{ formcliente.nome | addclass:'form-control' }}
+    </div>
+    <div class="form-group col-md-6">
+      <label>Campo</label>
+      {{ formcliente.nome | addclass:'form-control' }}
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label>Campo</label>
+      {{ formcliente.nome | addclass:'form-control' }}
+    </div>
+    <div class="form-group col-md-4">
+      <label>Campo</label>
+      {{ formcliente.nome | addclass:'form-control' }}
+    </div>
+
+  </div>
+  <input type="submit" class="btn btn-primary" value="Cadastrar">
+</form>
+
+</form>
+
+
+
 {% endblock conteudo %}
 </body>
 </html>
