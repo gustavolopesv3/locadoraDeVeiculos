@@ -11,3 +11,11 @@ def cadastroveiculo(request):
     formveiculo = FormVeiculo
     return render(request, 'cadastroveiculo.html', locals())
 
+def alguel(request):
+    formaluguel = FormAluguel
+    return render(request, 'aluguel.html', locals())
+
+def base(request):
+    return render(request, 'base.html')
+
+

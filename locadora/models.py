@@ -6,6 +6,8 @@ class Cliente(models.Model):
     data_nascimento = models.DateField()
     email = models.EmailField()
     telefone = models.IntegerField(max_length=15)
+    cidade = models.CharField(max_length=50)
+    estado = models.CharField(max_length=15)
     bairro = models.CharField(max_length=50)
     rua = models.CharField(max_length=50)
     numero = models.IntegerField(max_length=6)
@@ -24,5 +26,16 @@ class Marcas(models.Model):
 
 class Modelo(models.Model):
     nome = models.CharField(max_length=10)
+
+class Alguel(models.Model):
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
+    data_locacao = models.DateField(auto_now=True)
+    data_retorno = models.DateField()
+    valor = models.IntegerField(max_length=9)
+    observacao = models.TextField(max_length=255)
+
+
+
 
 

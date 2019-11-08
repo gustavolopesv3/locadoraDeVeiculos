@@ -20,6 +20,8 @@ from locadora.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', cadastrocliente, name='cadastrocliente'),
-    path('cadastroveiculo', cadastroveiculo, name='cadastroveiculo' )
+    path('cadastrocliente', cadastrocliente, name='cadastrocliente'),
+    path('cadastroveiculo', cadastroveiculo, name='cadastroveiculo' ),
+    path('alguel', alguel, name='alguel' ),
+    path('', base, name='base' ),
 ]

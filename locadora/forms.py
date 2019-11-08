@@ -11,3 +11,8 @@ class FormVeiculo(forms.ModelForm):
     class Meta:
         model = Veiculo
         fields = '__all__'
+
+class FormAluguel(forms.ModelForm):
+    class Meta:
+        model = Alguel
+        fields = '__all__'

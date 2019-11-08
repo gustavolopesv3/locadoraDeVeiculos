@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{%  load filtros %}
+
+{% block conteudo %}
+
+<form method="post" class="card-header">
+  {% csrf_token %}
+    <div class="text-danger text-center col-md-6"> <h1>Alguel de Veiculo</h1>
+    </div>
+
+    <div class="form-group col-md-7">
+      <label>Cliente:</label>
+      {{ formaluguel.cliente | addclass:'form-control' }}
+    </div>
+
+    <div class="form-group col-md-7">
+      <label>Veiculo:</label>
+      {{ formaluguel.veiculo | addclass:'form-control' }}
+    </div>
+
+    <div class="form-group col-md-7">
+      <label>Data para retorno:</label>
+      {{ formaluguel.data_retorno | addclass:'form-control' }}
+    </div>
+
+    <div class="form-group col-md-7">
+      <label>Valor:</label>
+      {{ formaluguel.valor | addclass:'form-control' }}
+    </div>
+
+    <div class="form-group col-md-7">
+      <label>Oberservação:</label>
+      {{ formaluguel.observacao | addclass:'form-control' }}
+    </div>
+
+
+
+
+  <input type="submit" class="btn btn-primary" value="Cadastrar">
+</form>
+
+{% endblock conteudo %}
