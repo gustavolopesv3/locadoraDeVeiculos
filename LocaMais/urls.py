@@ -25,4 +25,6 @@ urlpatterns = [
     path('alguel', alguel, name='alguel'),
     path('', base, name='base' ),
     path('listclientes', listclientes, name='listclientes' ),
+    path('cadastromarca', cadastromarca, name='cadastromarca' ),
+    path('cadastromodelo', cadastromodelo, name='cadastromodelo' ),
 ]
