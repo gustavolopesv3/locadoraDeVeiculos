@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block conteudo %}
+
+
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i> Clientes </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Cidade</th>
+                    <th>email</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Cidade</th>
+                    <th>email</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+
+
+                {% for i in cliente %}
+                <tr>
+                    <td>{{ i.nome }}</td>
+                    <td>{{ i.cpf }}</td>
+                    <td>{{ i.cidade }}</td>
+                    <td>{{ i.email }}</td>
+
+                  </tr>
+                {% endfor %}
+
+
+
+
+{% endblock conteudo %}

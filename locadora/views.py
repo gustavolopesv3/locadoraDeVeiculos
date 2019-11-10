@@ -1,11 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from locadora.forms import *
 
 
 def cadastrocliente(request):
-    formcliente = FormCliente
-    return render(request, 'index.html',locals())
+    if request.method == 'POST':
+        form = FormCliente(request.POST)
+        if form.is_valid():
+            marcaform = form.save()
+            marcaform.save()
+            return redirect('/')
+    form = FormCliente()
+    return render(request, 'index.html', {'form': form})
+
+
 
 def cadastroveiculo(request):
     formveiculo = FormVeiculo
@@ -18,4 +26,6 @@ def alguel(request):
 def base(request):
     return render(request, 'base.html')
 
-
+def listclientes(request):
+    cliente = Cliente.objects.all()
+    return render(request, 'listclientes.html', locals())

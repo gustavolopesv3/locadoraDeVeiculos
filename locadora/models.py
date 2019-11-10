@@ -13,6 +13,9 @@ class Cliente(models.Model):
     numero = models.IntegerField(max_length=6)
     cep = models.IntegerField(max_length=10)
 
+    def __str__(self):
+        return self.nome
+
 class Veiculo(models.Model):
     marca = models.ForeignKey('Marcas',on_delete=models.CASCADE)
     modelo = models.ForeignKey('Modelo', on_delete=models.CASCADE)

@@ -5,7 +5,8 @@
 
 {% block conteudo %}
 
-    <form class="card-header">
+    <form class="card-header" method="post">
+         {% csrf_token %}
         <div class="form-row">
             <div class="form-group col-md-8">
                 <label>Marca</label>

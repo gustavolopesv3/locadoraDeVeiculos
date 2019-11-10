@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cadastrocliente', cadastrocliente, name='cadastrocliente'),
     path('cadastroveiculo', cadastroveiculo, name='cadastroveiculo' ),
-    path('alguel', alguel, name='alguel' ),
+    path('alguel', alguel, name='alguel'),
     path('', base, name='base' ),
+    path('listclientes', listclientes, name='listclientes' ),
 ]

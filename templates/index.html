@@ -3,12 +3,10 @@
 
 <html lang="pt-br">
 <head>
-    <title>Area de teste</title>
 </head>
 <body>
 
 {% block conteudo %}
-
 
 <form method="post" class="card-header col-md-12" >
   {% csrf_token %}
@@ -16,50 +14,55 @@
   <div class="form-row">
     <div class="form-group col-md-7">
       <label>Nome:</label>
-      {{ formcliente.nome | addclass:'form-control' }}
+      {{ form.nome | addclass:'form-control' }}
     </div>
     <div class="form-group col-md-3 date-imputmask">
       <label>cpf</label>
-      {{ formcliente.cpf | addclass:'form-control' }}
+      {{ form.cpf | addclass:'form-control' }}
     </div>
     <div class="form-group col-md-2">
       <label>Data Nascimento</label>
-      {{ formcliente.data_nascimento | addclass:'form-control' }}
+      {{ form.data_nascimento | addclass:'form-control' }}
     </div>
 
   </div>
  <div class="form-row">
   <div class="form-group col-md-4">
     <label>Email</label>
-    {{ formcliente.email | addclass:'form-control' }}
+    {{ form.email | addclass:'form-control' }}
   </div>
   <div class="form-group">
     <label>Telefone</label>
-    {{ formcliente.telefone | addclass:'form-control' }}
+    {{ form.telefone | addclass:'form-control' }}
   </div>
  </div>
 <div class="form-row">
   <div class="form-group col-md-4">
     <label>Cidade:</label>
-    {{ formcliente.cidade | addclass:'form-control' }}
+    {{ form.cidade | addclass:'form-control' }}
   </div>
     <div class="form-group col-md-2">
     <label>Estado</label>
-    {{ formcliente.estado | addclass:'form-control' }}
+    {{ form.estado | addclass:'form-control' }}
   </div>
     <div class="form-group col-md-4">
     <label>Rua</label>
-    {{ formcliente.rua | addclass:'form-control' }}
+    {{ form.rua | addclass:'form-control' }}
   </div>
 
   <div class="form-group col-md-1">
     <label>Numero</label>
-    {{ formcliente.numero | addclass:'form-control' }}
+    {{ form.numero | addclass:'form-control' }}
   </div>
   <div class="form-group col-md-3">
     <label>Bairro</label>
-    {{ formcliente.bairro | addclass:'form-control' }}
+    {{ form.bairro | addclass:'form-control' }}
   </div>
+    <div class="form-group col-md-3">
+    <label>CEP <small class="text-muted">(99) 99999-9999 </small></label>
+    {{ form.cep  | addclass:'form-control' }}
+  </div>
+
 </div>
   <input type="submit" class="btn btn-primary" value="Cadastrar">
 </form>
