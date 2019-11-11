@@ -41,6 +41,21 @@ class FormVeiculo(forms.ModelForm):
 
 
 class FormAluguel(forms.ModelForm):
+    data_retorno = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control dataNascimento-inputmask', 'id': 'dataNascimento', }
+        ),
+    )
+    valor = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control salario-inputmask', 'id': 'salario', }
+        ),
+    )
+
+
+
     class Meta:
         model = Alguel
         fields = '__all__'

@@ -24,6 +24,11 @@ class Veiculo(models.Model):
     cor = models.CharField(max_length=15)
     ano = models.IntegerField(max_length=5)
 
+    def __str__(self):
+        return self.modelo.nome
+
+
+
 class Marcas(models.Model):
     nome = models.CharField(max_length=10)
 
@@ -40,8 +45,8 @@ class Alguel(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
     data_locacao = models.DateField(auto_now=True)
-    data_retorno = models.DateField()
-    valor = models.IntegerField(max_length=9)
+    data_retorno = models.CharField(max_length=15)
+    valor = models.CharField(max_length=9)
     observacao = models.TextField(max_length=255)
 
 

@@ -43,8 +43,8 @@ def cadastromodelo(request):
     if request.method == 'POST':
         form = FormModelo(request.POST)
         if form.is_valid():
-            modeloform = form.save()
-            modeloform.save()
+            cadastroform = form.save()
+            cadastroform.save()
             return redirect('/')
     form = FormMarca()
     return render(request, 'cadastromodelo.html', {'form': form})
@@ -52,8 +52,14 @@ def cadastromodelo(request):
 
 @login_required()
 def alguel(request):
-    formaluguel = FormAluguel
-    return render(request, 'aluguel.html', locals())
+    if request.method == 'POST':
+        form = FormAluguel(request.POST)
+        if form.is_valid():
+            alguelform = form.save()
+            alguelform.save()
+            return redirect('/')
+    form = FormAluguel()
+    return render(request, 'aluguel.html', {'form': form})
 
 @login_required()
 def base(request):
@@ -78,5 +84,6 @@ def login(request):
             return redirect('/equipamentos')
     return render(request, 'registration/login.html')
 
-def mask(request):
-    return render(request, 'mask.html')
+def listaralguel(request):
+    listaluguel = Alguel.objects.all()
+    return render(request, 'listaraluguel.html', locals())

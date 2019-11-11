@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i> Clientes </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Cliente</th>
+                    <th>Veiculo</th>
+                    <th>Data de Locação</th>
+                    <th>Data de Retorno</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Cliente</th>
+                    <th>Veiculo</th>
+                    <th>Data de Locação</th>
+                    <th>Data de Retorno</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+
+
+                {% for i in listaluguel %}
+                <tr>
+                    <td>{{ i.cliente }}</td>
+                    <td>{{ i.veiculo }}</td>
+                    <td>{{ i.data_locacao }}</td>
+                    <td>{{ i.data_retorno }}</td>
+
+                  </tr>
+                {% endfor %}
+
+{% endblock conteudo %}
