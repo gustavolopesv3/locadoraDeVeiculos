@@ -2,10 +2,10 @@ from django.db import models
 
 class Cliente(models.Model):
     nome = models.CharField(max_length=100)
-    cpf = models.IntegerField(max_length=11)
-    data_nascimento = models.DateField()
+    cpf = models.CharField(max_length=20)
+    data_nascimento = models.CharField(max_length=15)
     email = models.EmailField()
-    telefone = models.IntegerField(max_length=15)
+    telefone = models.CharField(max_length=15)
     cidade = models.CharField(max_length=50)
     estado = models.CharField(max_length=15)
     bairro = models.CharField(max_length=50)

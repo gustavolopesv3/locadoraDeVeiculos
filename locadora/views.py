@@ -69,7 +69,7 @@ def contaclientes(request):
     contclientes = Cliente.objects.all().count()
     return render(request, 'base.html', locals())
 
-@login_required()
+
 def login(request):
     if request.method =='POST':
         user = authenticate(username=request.POST['usarname'], password=request.POST['password'])
@@ -77,3 +77,6 @@ def login(request):
             login(request, user)
             return redirect('/equipamentos')
     return render(request, 'registration/login.html')
+
+def mask(request):
+    return render(request, 'mask.html')
