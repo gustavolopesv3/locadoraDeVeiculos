@@ -1,8 +1,10 @@
+from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from locadora.forms import *
 
-
+@login_required()
 def cadastrocliente(request):
     if request.method == 'POST':
         form = FormCliente(request.POST)
@@ -14,7 +16,7 @@ def cadastrocliente(request):
     return render(request, 'cadastrocliente.html', {'form': form})
 
 
-
+@login_required()
 def cadastroveiculo(request):
     if request.method == 'POST':
         form = FormVeiculo(request.POST)
@@ -25,6 +27,7 @@ def cadastroveiculo(request):
     form = FormVeiculo()
     return render(request, 'cadastroveiculo.html', {'form': form})
 
+@login_required()
 def cadastromarca(request):
     if request.method == 'POST':
         form = FormMarca(request.POST)
@@ -35,6 +38,7 @@ def cadastromarca(request):
     form = FormMarca()
     return render(request, 'cadastromarca.html  ', {'form': form})
 
+@login_required()
 def cadastromodelo(request):
     if request.method == 'POST':
         form = FormModelo(request.POST)
@@ -46,14 +50,25 @@ def cadastromodelo(request):
     return render(request, 'cadastromodelo.html', {'form': form})
 
 
-
+@login_required()
 def alguel(request):
     formaluguel = FormAluguel
     return render(request, 'aluguel.html', locals())
 
+@login_required()
 def base(request):
     return render(request, 'base.html')
 
+@login_required()
 def listclientes(request):
     cliente = Cliente.objects.all()
     return render(request, 'listclientes.html', locals())
+
+@login_required()
+def login(request):
+    if request.method =='POST':
+        user = authenticate(username=request.POST['usarname'], password=request.POST['password'])
+        if user is not None:
+            login(request, user)
+            return redirect('/equipamentos')
+    return render(request, 'registration/login.html')
