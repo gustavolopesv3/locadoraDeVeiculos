@@ -11,7 +11,7 @@ def cadastrocliente(request):
             clienteform.save()
             return redirect('/')
     form = FormCliente()
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'cadastrocliente.html', {'form': form})
 
 
 
