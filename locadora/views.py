@@ -65,6 +65,11 @@ def listclientes(request):
     return render(request, 'listclientes.html', locals())
 
 @login_required()
+def contaclientes(request):
+    contclientes = Cliente.objects.all().count()
+    return render(request, 'base.html', locals())
+
+@login_required()
 def login(request):
     if request.method =='POST':
         user = authenticate(username=request.POST['usarname'], password=request.POST['password'])

@@ -23,9 +23,9 @@ urlpatterns = [
     path('cadastrocliente', cadastrocliente, name='cadastrocliente'),
     path('cadastroveiculo', cadastroveiculo, name='cadastroveiculo' ),
     path('alguel', alguel, name='alguel'),
-    path('', base, name='base' ),
     path('listclientes', listclientes, name='listclientes' ),
     path('cadastromarca', cadastromarca, name='cadastromarca' ),
     path('cadastromodelo', cadastromodelo, name='cadastromodelo' ),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('', contaclientes, name='contaclientes'),
 ]
