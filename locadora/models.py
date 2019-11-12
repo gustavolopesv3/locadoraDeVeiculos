@@ -36,7 +36,9 @@ class Marcas(models.Model):
         return self.nome
 
 class Modelo(models.Model):
+    marca = models.ForeignKey(Marcas, on_delete=models.CASCADE)
     nome = models.CharField(max_length=10)
+
     def __str__(self):
         return self.nome
 

@@ -43,8 +43,8 @@ def cadastromodelo(request):
     if request.method == 'POST':
         form = FormModelo(request.POST)
         if form.is_valid():
-            cadastroform = form.save()
-            cadastroform.save()
+            modeloform = form.save()
+            modeloform.save()
             return redirect('/')
     form = FormMarca()
     return render(request, 'cadastromodelo.html', {'form': form})
