@@ -91,4 +91,4 @@ def listaralguel(request):
 
 def listarveiculos(request):
     listaveiculo = Veiculo.objects.all()
-    return request(request, 'listarveiculos.html', locals())
+    return render(request, 'listarveiculos.html', locals())
