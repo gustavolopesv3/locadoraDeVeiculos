@@ -1,61 +1,42 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
 {% load filtros %}
-
-<body>
 
 {% block conteudo %}
 
-    <form class="card-header" method="post">
-         {% csrf_token %}
-        <div class="form-row">
-            <div class="form-group col-md-8">
-                <label>Marca</label>
-                {{ form.marca | addclass:'form-control'  }}
-            </div>
-            <div class="form-group col-md-3">
-                <label>Modelo</label>
-                {{ form.modelo | addclass:'form-control'  }}
-            </div>
-            <div class="form-group col-md-1">
-                <label>Ano</label>
-                {{ form.ano | addclass:'form-control'  }}
-            </div>
-         <div class="form-row">
-            <div class="form-group col-md-5">
-                <label>Placa</label>
-                {{ form.placa | addclass:'form-control'  }}
-            </div>
-            <div class="form-group col-md-5">
-                <label>Chassi</label>
-                {{ form.chassi | addclass:'form-control'  }}
-            </div>
-                <div class="form-group col-md-2">
-                    <label>cor</label>
-                    {{ form.cor | addclass:'form-control'  }}
-                </div>
-        </div>
-    </form>
-    <div class="button">
-             <input type="submit" class="btn btn-primary" value="Cadastrar">
-        </div>
-<!--modal-->
-    <div class="modal" id="modalmarca" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-
-
-                </div>
-                <div class="modal-body">
-
-
-                </div>
-            </div>
-
-        </div>
+<form method="post" class="card-header">
+{% csrf_token %}
+    <div class="text-danger text-center col-md-6"> <h1>Cadastro de Veiculo</h1>
     </div>
+ <div class="form-group col-md-2">
+     <label>Modelo:</label>
+     {{ form.modelo | addclass:'form-control'  }}
+ </div>
+ <div class="form-group col-md-2">
+     <label>Ano:</label>
+     {{ form.ano | addclass:'form-control'  }}
+ </div>
+ <div class="form-group col-md-2">
+     <label>Placa:</label>
+     {{ form.placa | addclass:'form-control'  }}
+ </div>
+ <div class="form-group col-md-2">
+     <label>Chassi:</label>
+     {{ form.chassi | addclass:'form-control'  }}
+ </div>
+ <div class="form-group col-md-2">
+     <label>Cor:</label>
+     {{ form.cor | addclass:'form-control'  }}
+ </div>
 
-</body>
+
+     <div class="button ">
+         <input type="submit" class="btn btn-primary col-md-2" value="Cadastrar">
+     </div>
+ </div>
+
+
+</form>
+
 
 
 {% endblock conteudo %}

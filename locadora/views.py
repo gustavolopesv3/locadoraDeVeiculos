@@ -40,13 +40,14 @@ def cadastromarca(request):
 
 @login_required()
 def cadastromodelo(request):
+
     if request.method == 'POST':
         form = FormModelo(request.POST)
         if form.is_valid():
             modeloform = form.save()
             modeloform.save()
             return redirect('/')
-    form = FormMarca()
+    form = FormModelo()
     return render(request, 'cadastromodelo.html', {'form': form})
 
 
