@@ -47,7 +47,7 @@ class Alguel(models.Model):
     veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
     data_locacao = models.DateField(auto_now=True)
     data_retorno = models.CharField(max_length=15)
-    valor = models.DecimalField(max_digits=10,decimal_places=2)
+    valor = models.CharField(max_length=10)
     observacao = models.TextField(max_length=255)
 
 

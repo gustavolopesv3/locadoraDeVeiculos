@@ -74,9 +74,10 @@ def listclientes(request):
 @login_required()
 def contaclientes(request):
     contclientes = Cliente.objects.all().count()
+    locacoes = Alguel.objects.all().count()
     return render(request, 'base.html', locals())
 
-
+@login_required()
 def login(request):
     if request.method =='POST':
         user = authenticate(username=request.POST['usarname'], password=request.POST['password'])
@@ -85,10 +86,13 @@ def login(request):
             return redirect('/equipamentos')
     return render(request, 'registration/login.html')
 
+@login_required()
 def listaralguel(request):
     listaluguel = Alguel.objects.all()
     return render(request, 'listaraluguel.html', locals())
 
+
+@login_required()
 def listarveiculos(request):
     listaveiculo = Veiculo.objects.all()
     return render(request, 'listarveiculos.html', locals())
