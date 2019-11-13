@@ -10,13 +10,14 @@ class Cliente(models.Model):
     estado = models.CharField(max_length=15)
     bairro = models.CharField(max_length=50)
     rua = models.CharField(max_length=50)
-    numero = models.CharField(max_length=6)
-    cep = models.CharField(max_length=10)
+    numero = models.IntegerField(max_length=6)
+    cep = models.IntegerField(max_length=10)
 
     def __str__(self):
         return self.nome
 
 class Veiculo(models.Model):
+    marca = models.ForeignKey('Marcas',on_delete=models.CASCADE)
     modelo = models.ForeignKey('Modelo', on_delete=models.CASCADE)
     placa = models.CharField(max_length=10)
     chassi = models.CharField(max_length=20)
@@ -47,9 +48,8 @@ class Alguel(models.Model):
     veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
     data_locacao = models.DateField(auto_now=True)
     data_retorno = models.CharField(max_length=15)
-    valor = models.CharField(max_length=10)
+    valor = models.CharField(max_length=9)
     observacao = models.TextField(max_length=255)
-
 
 
 
