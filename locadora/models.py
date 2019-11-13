@@ -17,7 +17,6 @@ class Cliente(models.Model):
         return self.nome
 
 class Veiculo(models.Model):
-    marca = models.ForeignKey('Marcas',on_delete=models.CASCADE)
     modelo = models.ForeignKey('Modelo', on_delete=models.CASCADE)
     placa = models.CharField(max_length=10)
     chassi = models.CharField(max_length=20)
@@ -50,6 +49,7 @@ class Alguel(models.Model):
     data_retorno = models.CharField(max_length=15)
     valor = models.DecimalField(max_digits=10,decimal_places=2)
     observacao = models.TextField(max_length=255)
+
 
 
 

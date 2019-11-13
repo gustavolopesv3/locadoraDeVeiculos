@@ -88,3 +88,7 @@ def login(request):
 def listaralguel(request):
     listaluguel = Alguel.objects.all()
     return render(request, 'listaraluguel.html', locals())
+
+def listarveiculos(request):
+    listaveiculo = Veiculo.objects.all()
+    return request(request, 'listarveiculos.html', locals())

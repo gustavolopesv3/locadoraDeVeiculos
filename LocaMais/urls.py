@@ -28,5 +28,6 @@ urlpatterns = [
     path('cadastromodelo', cadastromodelo, name='cadastromodelo' ),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', contaclientes, name='contaclientes'),
-    path('listaraluguel', listaralguel, name='listaraluguel')
+    path('listaraluguel', listaralguel, name='listaraluguel'),
+    path('listarveiculos', listarveiculos, name='listarveiculos'),
 ]
