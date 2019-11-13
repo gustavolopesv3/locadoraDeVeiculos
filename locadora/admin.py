@@ -5,3 +5,4 @@ from .models import *
 
 admin.site.register(Cliente)
 admin.site.register(Alguel)
+admin.site.register(Veiculo)

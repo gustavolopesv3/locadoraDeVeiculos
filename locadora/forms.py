@@ -21,6 +21,13 @@ class FormCliente(forms.ModelForm):
             attrs={'class': 'form-control telefone-inputmask', 'id': 'telefone',}
         ),
     )
+    cep = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control ', 'id': 'cep',}
+        ),
+    )
+
 
 
     class Meta:

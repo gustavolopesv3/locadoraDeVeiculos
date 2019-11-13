@@ -11,18 +11,23 @@ class Cliente(models.Model):
     bairro = models.CharField(max_length=50)
     rua = models.CharField(max_length=50)
     numero = models.IntegerField(max_length=6)
-    cep = models.IntegerField(max_length=10)
+    cep = models.CharField(max_length=10)
 
     def __str__(self):
         return self.nome
 
 class Veiculo(models.Model):
-    marca = models.ForeignKey('Marcas',on_delete=models.CASCADE)
+    STATUS =[
+        ('D','DISPONIVEL'),
+        ('I','INDISPONIVEL'),
+    ]
     modelo = models.ForeignKey('Modelo', on_delete=models.CASCADE)
     placa = models.CharField(max_length=10)
     chassi = models.CharField(max_length=20)
     cor = models.CharField(max_length=15)
     ano = models.IntegerField(max_length=5)
+    status = models.CharField(max_length=14, choices=STATUS)
+
 
     def __str__(self):
         return self.modelo.nome
