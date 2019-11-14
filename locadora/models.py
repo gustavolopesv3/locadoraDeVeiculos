@@ -10,7 +10,7 @@ class Cliente(models.Model):
     estado = models.CharField(max_length=15)
     bairro = models.CharField(max_length=50)
     rua = models.CharField(max_length=50)
-    numero = models.IntegerField(max_length=6)
+    numero = models.IntegerField()
     cep = models.CharField(max_length=10)
 
     def __str__(self):
@@ -18,14 +18,14 @@ class Cliente(models.Model):
 
 class Veiculo(models.Model):
     STATUS =[
-        ('D','DISPONIVEL'),
-        ('I','INDISPONIVEL'),
+        ('DISPONIVEL','DISPONIVEL'),
+        ('INDISPONIVEL','INDISPONIVEL'),
     ]
     modelo = models.ForeignKey('Modelo', on_delete=models.CASCADE)
     placa = models.CharField(max_length=10)
     chassi = models.CharField(max_length=20)
     cor = models.CharField(max_length=15)
-    ano = models.IntegerField(max_length=5)
+    ano = models.IntegerField()
     status = models.CharField(max_length=14, choices=STATUS)
 
 
@@ -55,6 +55,8 @@ class Alguel(models.Model):
     data_retorno = models.CharField(max_length=15)
     valor = models.CharField(max_length=9)
     observacao = models.TextField(max_length=255)
+
+
 
 
 

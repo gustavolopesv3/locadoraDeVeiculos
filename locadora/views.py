@@ -94,5 +94,5 @@ def listaralguel(request):
 
 @login_required()
 def listarveiculos(request):
-    listaveiculo = Veiculo.objects.all()
+    listaveiculo = Veiculo.objects.filter(status='DISPONIVEL')
     return render(request, 'listarveiculos.html', locals())
