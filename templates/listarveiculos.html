@@ -46,7 +46,8 @@
                     <td>{{ i.cor }}</td>
                     <td>{{ i.status }}</td>
                     <td>
-                        <a href="{% url 'deletarveiculo' i.id %}">Deletar</a>
+                        <a class="btn btn-primary btn-sm" href="{% url 'editarveiculo' i.id %}">Editar</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'deletarveiculo' i.id %}">Deletar</a>
                     </td>
                   </tr>
                 {% endfor %}

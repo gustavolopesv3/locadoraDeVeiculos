@@ -34,6 +34,7 @@ class Veiculo(models.Model):
 
 
 
+
 class Marcas(models.Model):
     nome = models.CharField(max_length=10)
 
