@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Area de testes</title>
+
+    <link href="{% static 'css/select2.min.css' %}" rel="stylesheet"/>
+
+
+
+</head>
+<body>
+<select class="js-example-basic-single" name="state">
+  <option value="AL">Alabama</option>
+    ...
+  <option value="WY">Wyoming</option>
+</select>
+</body>
+</html>
+
+    <script src="{% static 'js/select2.min.js' %}"></script>
+<script type="javascript">
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+</script>

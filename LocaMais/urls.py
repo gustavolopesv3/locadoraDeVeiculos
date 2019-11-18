@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cadastrocliente', cadastrocliente, name='cadastrocliente'),
     path('cadastroveiculo', cadastroveiculo, name='cadastroveiculo' ),
+    path('editarveiculo/<int:id>', editarveiculo, name='editarveiculo' ),
+    path('deletarveiculo/<int:id>', deletarveiculo, name='deletarveiculo' ),
     path('alguel', alguel, name='alguel'),
     path('listclientes', listclientes, name='listclientes' ),
     path('cadastromarca', cadastromarca, name='cadastromarca' ),
@@ -30,4 +32,5 @@ urlpatterns = [
     path('', contaclientes, name='contaclientes'),
     path('listaraluguel', listaralguel, name='listaraluguel'),
     path('listarveiculos', listarveiculos, name='listarveiculos'),
+    path('teste', teste, name='teste'),
 ]

@@ -6,7 +6,7 @@ class FormCliente(forms.ModelForm):
     cpf = forms.CharField(
         required=False,
         widget=forms.TextInput(
-            attrs={'class': 'form-control cpf-inputmask', 'id': 'cpf',}
+            attrs={'class': 'form-control cpfcnpj-inputmask', 'id': 'cpfcnpj',}
         ),
     )
     data_nascimento = forms.CharField(
@@ -54,14 +54,13 @@ class FormAluguel(forms.ModelForm):
             attrs={'class': 'form-control dataNascimento-inputmask', 'id': 'dataNascimento', }
         ),
     )
+
     valor = forms.CharField(
         required=False,
         widget=forms.TextInput(
             attrs={'class': 'form-control salario-inputmask', 'id': 'salario', }
         ),
     )
-
-
 
     class Meta:
         model = Alguel

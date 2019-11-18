@@ -16,6 +16,7 @@
                     <th>Chassi</th>
                     <th>Cor</th>
                     <th>Status</th>
+                    <th>Ação</th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -27,6 +28,7 @@
                     <th>Chassi</th>
                     <th>Cor</th>
                     <th>Status</th>
+                    <th>Ação</th>
                   </tr>
                 </tfoot>
                 <tbody>
@@ -34,14 +36,18 @@
 
                 {% for i in listaveiculo %}
                 <tr>
-                    <td>{{ i.modelo.marca }}</td>
+                    <td>
+                        <a href="{% url 'editarveiculo' i.id %}">{{ i.modelo.marca }}</a>
+                    </td>
                     <td>{{ i.modelo }}</td>
                     <td>{{ i.ano }}</td>
                     <td>{{ i.placa }}</td>
                     <td>{{ i.chassi }}</td>
                     <td>{{ i.cor }}</td>
                     <td>{{ i.status }}</td>
-
+                    <td>
+                        <a href="{% url 'deletarveiculo' i.id %}">Deletar</a>
+                    </td>
                   </tr>
                 {% endfor %}
 

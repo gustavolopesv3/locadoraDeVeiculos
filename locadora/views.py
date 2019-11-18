@@ -26,6 +26,24 @@ def cadastroveiculo(request):
             return redirect('/')
     form = FormVeiculo()
     return render(request, 'cadastroveiculo.html', {'form': form})
+@login_required()
+def editarveiculo(request, id):
+    veiculo_ant = Veiculo.objects.get(id=id)
+    form = FormVeiculo(request.POST or None, instance=veiculo_ant)
+
+    if form.is_valid():
+        form = form.save()
+        form.save()
+        return redirect('/')
+    return render(request, 'editarveiculo.html', {'form': form, })
+@login_required()
+def deletarveiculo(request, id):
+    veiculo_delete = Veiculo.objects.get(id=id)
+    if request.method == 'POST':
+        veiculo_delete.delete()
+        return redirect('listarveiculos')
+    return render(request, 'veiculo-confirma-delete.html', {'veiculo_delete': veiculo_delete, })
+
 
 @login_required()
 def cadastromarca(request):
@@ -96,3 +114,6 @@ def listaralguel(request):
 def listarveiculos(request):
     listaveiculo = Veiculo.objects.filter(status='DISPONIVEL')
     return render(request, 'listarveiculos.html', locals())
+
+def teste(request):
+    return render(request, 'teste.html')

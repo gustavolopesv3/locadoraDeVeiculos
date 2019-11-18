@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>confirmar delete</title>
+</head>
+<body>
+{% block conteudo %}
+    <form method="post">
+        {% csrf_token %}
+        <h2>Tem certeza que deseja excluir este veiculo ({{ veiculo_delete.modelo }}) ?</h2>
+        <button type="submit">Confirmar</button>
+    </form>
+{% endblock conteudo %}
+</body>
+</html>

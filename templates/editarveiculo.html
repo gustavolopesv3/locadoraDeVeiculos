@@ -1,0 +1,47 @@
+{{{% extends 'base.html'%}
+{% load filtros %}
+
+{% block conteudo %}
+
+<form method="post" class="card-header">
+{% csrf_token %}
+    <div class="text-danger text-center col-md-6"> <h1>Cadastro de Veiculo</h1>
+    </div>
+ <div class="form-group col-md-2">
+     <label>Modelo:</label>
+     {{ form.modelo | addclass:'form-control'  }}
+ </div>
+ <div class="form-group col-md-2">
+     <label>Ano:</label>
+     {{ form.ano | addclass:'form-control'  }}
+ </div>
+ <div class="form-group col-md-2">
+     {{ form.placa.errors }}
+     <label>Placa:</label>
+     {{ form.placa | addclass:'form-control'  }}
+ </div>
+ <div class="form-group col-md-2">
+     <label>Chassi:</label>
+     {{ form.chassi | addclass:'form-control'  }}
+ </div>
+ <div class="form-group col-md-2">
+     <label>Cor:</label>
+     {{ form.cor | addclass:'form-control'  }}
+ </div>
+ <div class="form-group col-md-2">
+     <label>Cor:</label>
+     {{ form.status | addclass:'form-control'  }}
+ </div>
+
+
+     <div class="button ">
+         <input type="submit" class="btn btn-primary col-md-2" value="Cadastrar">
+     </div>
+ </div>
+
+
+</form>
+
+
+
+{% endblock conteudo %}}}
