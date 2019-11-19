@@ -6,7 +6,7 @@ class FormCliente(forms.ModelForm):
     cpf = forms.CharField(
         required=False,
         widget=forms.TextInput(
-            attrs={'class': 'form-control cpfcnpj-inputmask', 'id': 'cpfcnpj',}
+            attrs={'class': 'form-control cpfcnpj-inputmask', 'id': 'cpf',}
         ),
     )
     data_nascimento = forms.CharField(
