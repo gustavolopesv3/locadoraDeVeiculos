@@ -16,6 +16,7 @@
                     <th>Valor alguel</th>
                     <th>data para receber</th>
                     <th>Data recebimento</th>
+                    <th>status</th>
                     <th>Ação</th>
                   </tr>
                 </thead>
@@ -28,6 +29,7 @@
                       <th>Valor alguel</th>
                       <th>data para receber</th>
                     <th>Data recebimento</th>
+                    <th>status</th>
                     <th>Ação</th>
                   </tr>
                 </tfoot>
@@ -43,6 +45,7 @@
                     <td>{{ i.valor }}</td>
                     <td>{{ i.data_retorno }}</td>
                     <td>{{ i.data_recebimento }}</td>
+                    <td>{{ i.veiculo.status }}</td>
                     <td><a class="btn btn-primary btn-sm" href="{% url 'receberalguel' i.id %}">Editar</a></td>
                   </tr>
                 {% endfor %}

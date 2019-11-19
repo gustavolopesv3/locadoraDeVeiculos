@@ -44,11 +44,14 @@ def receberalguel(request, id):
     if form.is_valid():
         alguelform = form.save()
         alguelform.save()
+        carro = Veiculo.objects.get(id=int(request.POST.get('veiculo')))
+        carro.status = 'DISPONIVEL'
+        carro.save()
         return redirect('listaraluguel')
     return render(request, 'receberlocacao.html', {'form': form})
 
 @login_required()
-def deletarveiculo(request, id):
+def deletarveiculo(request, id ):
     veiculo_delete = Veiculo.objects.get(id=id)
     if request.method == 'POST':
         veiculo_delete.delete()
@@ -87,6 +90,9 @@ def alguel(request):
         if form.is_valid():
             alguelform = form.save()
             alguelform.save()
+            carro = Veiculo.objects.get(id=int(request.POST.get('veiculo')))
+            carro.status = 'INDISPONIVEL'
+            carro.save()
             return redirect('/')
     form = FormAluguel()
     return render(request, 'aluguel.html', {'form': form})
@@ -130,7 +136,7 @@ def listaralguel_finalizado(request):
 
 @login_required()
 def listarveiculos(request):
-    listaveiculo = Veiculo.objects.filter(status='DISPONIVEL')
+    listaveiculo = Veiculo.objects.all()  #filter(status='DISPONIVEL')
     return render(request, 'listarveiculos.html', locals())
 
 def teste(request):
