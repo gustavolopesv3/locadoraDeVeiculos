@@ -36,6 +36,17 @@ def editarveiculo(request, id):
         form.save()
         return redirect('/')
     return render(request, 'editarveiculo.html', {'form': form, })
+
+@login_required()
+def receberalguel(request, id):
+    alugado = Alguel.objects.get(id=id)
+    form = FormAluguel(request.POST or None, instance=alugado)
+    if form.is_valid():
+        alguelform = form.save()
+        alguelform.save()
+        return redirect('listaraluguel')
+    return render(request, 'receberlocacao.html', {'form': form})
+
 @login_required()
 def deletarveiculo(request, id):
     veiculo_delete = Veiculo.objects.get(id=id)
@@ -80,6 +91,9 @@ def alguel(request):
     form = FormAluguel()
     return render(request, 'aluguel.html', {'form': form})
 
+
+
+
 @login_required()
 def base(request):
     return render(request, 'base.html')
@@ -106,8 +120,12 @@ def login(request):
 
 @login_required()
 def listaralguel(request):
-    listaluguel = Alguel.objects.all()
+    listaluguel = Alguel.objects.filter(data_recebimento__isnull=True)
     return render(request, 'listaraluguel.html', locals())
+@login_required()
+def listaralguel_finalizado(request):
+    listaluguel = Alguel.objects.filter(data_recebimento__isnull=False)
+    return render(request, 'locacoes_finalizadas.html', locals())
 
 
 @login_required()

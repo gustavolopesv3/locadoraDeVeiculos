@@ -50,12 +50,13 @@ class Modelo(models.Model):
 
 
 class Alguel(models.Model):
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
-    data_locacao = models.DateField(auto_now=True)
-    data_retorno = models.CharField(max_length=15)
-    valor = models.CharField(max_length=9)
-    observacao = models.TextField(max_length=255)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, null=True, blank=True)
+    veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE, null=True, blank=True)
+    data_locacao = models.DateField(auto_now=True, null=True, blank=True)
+    data_retorno = models.CharField(max_length=15, null=True, blank=True)
+    data_recebimento = models.CharField(max_length=15, null=True, blank=True)
+    valor = models.CharField(max_length=9, null=True, blank=True)
+    observacao = models.TextField(max_length=255, null=True, blank=True)
 
 
 
