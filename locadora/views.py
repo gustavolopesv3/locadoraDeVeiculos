@@ -65,7 +65,7 @@ def cadastromarca(request):
             marcaform.save()
             return redirect('/')
     form = FormMarca()
-    return render(request, 'cadastromarca.html  ', {'form': form})
+    return render(request, 'cadastromarca.html', {'form': form})
 
 @login_required()
 def cadastromodelo(request):
