@@ -18,7 +18,7 @@ class FormCliente(forms.ModelForm):
     telefone = forms.CharField(
         required=False,
         widget=forms.TextInput(
-            attrs={'class': 'form-control telefone-inputmask', 'id': 'telefone',}
+            attrs={'class': 'form-control telefone-inputmask', 'id': 'celular',}
         ),
     )
     cep = forms.CharField(
