@@ -61,7 +61,7 @@ def receberalguel(request, id):
         carro = Veiculo.objects.get(id=int(request.POST.get('veiculo')))
         carro.status = 'DISPONIVEL'
         carro.save()
-        return redirect('listaraluguel')
+        return redirect('listaraluguel_finalizado')
     return render(request, 'receberlocacao.html', {'form': form})
 
 @login_required()

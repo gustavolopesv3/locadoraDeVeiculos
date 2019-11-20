@@ -4,9 +4,8 @@
 
 <form method="post" class="card-header">
   {% csrf_token %}
-    <div class="text-danger text-center col-md-6"> <h1>Receber Veiculo</h1>
+    <div class="text-danger text-center col-md-6"> <h1>Receber Veiculo </h1>
     </div>
-
     <div class="js-select2 col-md-7">
       <label>Cliente:</label>
       {{ form.cliente | addclass:'form-control'}}
