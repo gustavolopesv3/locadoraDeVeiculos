@@ -127,7 +127,7 @@ def listclientes(request):
 @login_required()
 def contaclientes(request):
     contclientes = Cliente.objects.all().count()
-    locacoes = Alguel.objects.all().count()
+    locacoes = Alguel.objects.filter(data_recebimento__isnull=True).count()
     locacoesfim = Alguel.objects.filter(data_recebimento__isnull=False).count()
     veiculosdisponivel = Veiculo.objects.filter(status='DISPONIVEL').count()
     return render(request, 'base.html', locals())
