@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-
 from locadora.forms import *
 
 @login_required()
@@ -159,6 +159,21 @@ def listaralguel_finalizado(request):
 def listarveiculos(request):
     listaveiculo = Veiculo.objects.filter(status='DISPONIVEL')
     return render(request, 'listarveiculos.html', locals())
+
+
+@login_required()
+def cadastrar_usuario(request):
+    if request.method == 'POST':
+        form_usuario = UserCreationForm(request.POST)
+        if form_usuario.is_valid():
+            form_usuario.save()
+            return redirect('index')
+    else:
+        form_usuario = UserCreationForm()
+    return render(request,'registration/cadastro_usuario.html', {'form_usuario': form_usuario})
+
+def listar_usuarios(request):
+    user =
 
 def teste(request):
     return render(request, 'teste.html')
