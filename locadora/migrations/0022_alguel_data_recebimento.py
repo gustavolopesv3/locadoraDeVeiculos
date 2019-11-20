@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='alguel',
             name='data_recebimento',
-            field=models.CharField(default=0.0008104822369309739, max_length=15),
+            field=models.CharField(default=1, max_length=15),
             preserve_default=False,
         ),
     ]
