@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i> Veiculos alugado pelo cliente {{ id }} </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Placa</th>
+                    <th>Chassi</th>
+                    <th>Cor</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                      <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Placa</th>
+                    <th>Chassi</th>
+                    <th>Cor</th>
+                    <th>Status</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+
+
+                <tr>
+                    <td>{{ carros_cliente }}
+                    </td>
+                    <td>{{ i.modelo }}</td>
+                    <td>{{ i.ano }}</td>
+                    <td>{{ i.placa }}</td>
+                    <td>{{ i.chassi }}</td>
+                    <td>{{ i.cor }}</td>
+                    <td>{{ i.status }}</td>
+                  </tr>
+{% endblock conteudo %}

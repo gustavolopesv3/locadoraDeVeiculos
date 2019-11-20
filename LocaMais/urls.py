@@ -21,6 +21,7 @@ from locadora.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cadastrocliente', cadastrocliente, name='cadastrocliente'),
+    path('carros_cliente/<int:id>', listaveic_cliente, name='carros_cliente'),
     path('cadastroveiculo', cadastroveiculo, name='cadastroveiculo' ),
     path('editarveiculo/<int:id>', editarveiculo, name='editarveiculo' ),
     path('deletarveiculo/<int:id>', deletarveiculo, name='deletarveiculo' ),

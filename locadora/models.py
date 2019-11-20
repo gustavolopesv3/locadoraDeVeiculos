@@ -58,6 +58,10 @@ class Alguel(models.Model):
     valor = models.CharField(max_length=9, null=True, blank=True)
     observacao = models.TextField(max_length=255, null=True, blank=True)
 
+    def __str__(self):
+        return self.cliente.nome
+
+
 
 
 

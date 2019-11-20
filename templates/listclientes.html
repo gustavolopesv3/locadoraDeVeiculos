@@ -38,6 +38,7 @@
                     <td>{{ i.cidade }}</td>
                     <td>{{ i.email }}</td>
                     <td><a class="btn btn-primary btn-sm" href="{% url 'editarcliente' i.id %}">Editar</a></td>
+                    <td><a class="btn btn-primary btn-sm" href="{% url 'carros_cliente' i.id %}">locações</a></td>
 
                   </tr>
                 {% endfor %}

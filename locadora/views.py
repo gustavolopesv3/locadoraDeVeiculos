@@ -24,6 +24,10 @@ def editarcliente(request, id):
         return redirect('/')
     return render(request, 'cadastrocliente.html', {'form': form})
 
+def listaveic_cliente(request, id):
+    carros_cliente = Alguel.objects.filter(cliente=id)
+    return render(request, 'carros_cliente.html', locals())
+
 
 
 @login_required()
