@@ -24,6 +24,7 @@ urlpatterns = [
     path('cadastroveiculo', cadastroveiculo, name='cadastroveiculo' ),
     path('editarveiculo/<int:id>', editarveiculo, name='editarveiculo' ),
     path('deletarveiculo/<int:id>', deletarveiculo, name='deletarveiculo' ),
+    path('editarcliente/<int:id>', editarcliente, name='editarcliente' ),
     path('alguel', alguel, name='alguel'),
     path('receberalguel/<int:id>', receberalguel, name='receberalguel'),
     path('listclientes', listclientes, name='listclientes' ),

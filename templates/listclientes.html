@@ -35,6 +35,7 @@
                     <td>{{ i.cpf }}</td>
                     <td>{{ i.cidade }}</td>
                     <td>{{ i.email }}</td>
+                    <td><a class="btn btn-primary btn-sm" href="{% url 'editarcliente' i.id %}">Editar</a></td>
 
                   </tr>
                 {% endfor %}
