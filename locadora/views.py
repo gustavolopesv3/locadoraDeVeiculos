@@ -172,8 +172,6 @@ def cadastrar_usuario(request):
         form_usuario = UserCreationForm()
     return render(request,'registration/cadastro_usuario.html', {'form_usuario': form_usuario})
 
-def listar_usuarios(request):
-    user =
 
 def teste(request):
     return render(request, 'teste.html')
