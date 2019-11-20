@@ -55,6 +55,16 @@ class FormAluguel(forms.ModelForm):
         ),
     )
 
+
+    data_recebimento = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'id': 'dataNascimento', }
+        ),
+    )
+
+
+
     valor = forms.CharField(
         required=False,
         widget=forms.TextInput(
