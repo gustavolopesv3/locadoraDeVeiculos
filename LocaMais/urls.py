@@ -39,4 +39,5 @@ urlpatterns = [
     path('cadastro_usuario', cadastrar_usuario, name='cadastro_usuario'),
     path('listar_usuarios', listar_ususario, name='listar_usuarios'),
     path('teste', teste, name='teste'),
+    path('todos_veiculos', todos_carros, name='todos_veiculos'),
 ]

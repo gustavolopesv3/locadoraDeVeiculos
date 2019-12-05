@@ -48,6 +48,49 @@ class FormVeiculo(forms.ModelForm):
 
 
 class FormAluguel(forms.ModelForm):
+    veiculo = forms.ModelChoiceField(
+        queryset=Veiculo.objects.exclude(status='INDISPONIVEL'),
+        label='', empty_label="Selecione o veiculo",
+        widget=forms.Select(attrs={'class': 'form-control w-100'}))
+
+
+
+    data_retorno = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control dataNascimento-inputmask', 'id': 'dataNascimento', }
+        ),
+    )
+
+
+    data_recebimento = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control', 'id': 'dataNascimento', }
+        ),
+    )
+
+
+
+    valor = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={'class': 'form-control salario-inputmask', 'id': 'salario', }
+        ),
+    )
+
+    class Meta:
+        model = Alguel
+        fields = '__all__'
+
+class FormReceberAluguel(forms.ModelForm):
+    veiculo = forms.ModelChoiceField(
+        queryset=Veiculo.objects.exclude(status='DISPONIVEL'),
+        label='', empty_label="Selecione o veiculo",
+        widget=forms.Select(attrs={'class': 'form-control w-100'}))
+
+
+
     data_retorno = forms.CharField(
         required=False,
         widget=forms.TextInput(

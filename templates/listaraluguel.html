@@ -3,7 +3,7 @@
 
         <div class="card mb-3">
           <div class="card-header">
-            <i class="fas fa-table"></i> Locações </div>
+            <i class="fas fa-table"></i> Locações em aberto </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -46,7 +46,7 @@
                     <td>{{ i.data_retorno }}</td>
                     <td>{{ i.data_recebimento }}</td>
                     <td>{{ i.veiculo.status }}</td>
-                    <td><a class="btn btn-primary btn-sm" href="{% url 'receberalguel' i.id %}">Editar</a></td>
+                    <td><a class="btn btn-primary btn-sm" href="{% url 'receberalguel' i.id %}">Receber</a></td>
                   </tr>
                 {% endfor %}
 

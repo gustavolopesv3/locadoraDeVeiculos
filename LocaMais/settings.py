@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import django_heroku
+#import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,7 +27,7 @@ SECRET_KEY = 'l31qpxb1hwjcy^r+kdzsz9&1saasw4p)grr=r&$xsw^o+o89p%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -129,4 +129,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, '/static')
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())

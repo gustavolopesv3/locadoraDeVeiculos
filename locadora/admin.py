@@ -10,4 +10,6 @@ class veiculoAdmin(admin.ModelAdmin):
 
 admin.site.register(Cliente)
 admin.site.register(Alguel)
+admin.site.register(Modelo)
+admin.site.register(Marcas)
 admin.site.register(Veiculo, veiculoAdmin)

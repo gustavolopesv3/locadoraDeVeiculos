@@ -55,7 +55,7 @@ def editarveiculo(request, id):
 @login_required()
 def receberalguel(request, id):
     alugado = Alguel.objects.get(id=id)
-    form = FormAluguel(request.POST or None, instance=alugado)
+    form = FormReceberAluguel(request.POST or None, instance=alugado)
     if form.is_valid():
         alguelform = form.save()
         alguelform.save()
@@ -128,7 +128,7 @@ def listclientes(request):
 @login_required()
 def contaclientes(request):
     contclientes = Cliente.objects.all().count()
-    locacoes = Alguel.objects.filter(data_recebimento__isnull=True).count()
+    locacoes = Alguel.objects.filter(data_recebimento='').count()
     locacoesfim = Alguel.objects.filter(data_recebimento__isnull=False).count()
     veiculosdisponivel = Veiculo.objects.filter(status='DISPONIVEL').count()
     return render(request, 'base.html', locals())
@@ -144,14 +144,14 @@ def login(request):
 
 @login_required()
 def listaralguel(request):
-    listaluguel = Alguel.objects.filter(data_recebimento__isnull=True)
+    listaluguel = Alguel.objects.filter(data_recebimento='')
     return render(request, 'listaraluguel.html', locals())
 
 
 
 @login_required()
 def listaralguel_finalizado(request):
-    listaluguel = Alguel.objects.filter(data_recebimento__isnull=False)
+    listaluguel = Alguel.objects.filter(data_recebimento__gt=0)
     return render(request, 'locacoes_finalizadas.html', locals())
 
 
@@ -159,7 +159,10 @@ def listaralguel_finalizado(request):
 def listarveiculos(request):
     listaveiculo = Veiculo.objects.filter(status='DISPONIVEL')
     return render(request, 'listarveiculos.html', locals())
-
+@login_required
+def todos_carros(request):
+    carros = Veiculo.objects.all()
+    return render(request, 'todos_veiculos.html', locals())
 
 @login_required()
 def cadastrar_usuario(request):
